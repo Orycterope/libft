@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 16:14:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 17:34:03 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/23 18:21:34 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/23 18:50:21 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+size_t	ft_strlen(const char *s)
 {
-	char	*ptr;
-	size_t	c;
+	size_t l;
 
-	ptr = (char*) malloc(size);
-	if (ptr == NULL)
-		return (NULL);
-	c = 0;
-	while (c <= size)
-		ptr[c++] = 0;
-	return ((void*)ptr);
+	l = 0;
+	while (*s++)
+		l++;
+	return (l + 1);
 }

@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:28:47 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 22:52:56 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/23 21:12:09 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/23 21:37:30 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if(as)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	char	*str;
+
+	str = (char *) malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (NULL);
+	start++;
+	while (--start)
+		s++;
+	while(start < len)
+		str[start++] = *s++;
+	str[start] = '\0';
+	return (str);
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:28:47 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 22:52:56 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/23 20:43:11 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/23 20:52:39 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	if(as)
+	while(*s1 && *s2)
 	{
-		free(*as);
-		*as = NULL;
+		if (*s1++ != *s2++)
+			return (0);
 	}
+	return (*s1 == *s2);
 }

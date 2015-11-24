@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 18:21:34 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 15:01:39 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/24 13:21:20 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/24 13:31:47 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t l;
-
-	l = 0;
-	while (*s++)
-		l++;
-	return (l);
+	if (n == 0)
+		return;
+	while (n--)
+		*(char *)s++ = 0;
 }

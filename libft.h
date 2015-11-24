@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:24:10 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 21:56:27 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/24 14:56:25 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <unistd.h>
 
 void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
 int		ft_tolower(int c);
 int		ft_toupper(int c);

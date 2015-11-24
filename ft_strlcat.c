@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 16:41:11 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 16:59:18 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/24 17:38:04 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ size_t	ft_strlcat(char *s1, const char *s2, size_t size)
 {
 	char	*ptr;
 
-	ptr = ft_strchr(s1, '\0');
-	while(*s2 && size-- - 1)
+	ptr = s1;
+	while(*ptr && (size_t)(ptr - s1 + 1) < size)
+		ptr++;
+	while(*s2 && (size_t)(ptr - s1 + 1) < size)
 		*ptr++ = *s2++;
 	//*ptr = '\0';
-	return (ptr - s1 - 1);
+	return (ft_strlen(s1) + ft_strlen(s2));
 }

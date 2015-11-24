@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:50:28 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 17:54:46 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/24 21:34:46 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
+	if(s == NULL || f == NULL)
+		return;
 	while (*s)
 		(*f)(s++);
 }

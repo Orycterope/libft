@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 18:04:15 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 21:35:26 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/24 21:13:32 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/24 21:15:54 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int		ft_isalnum(int c)
 {
-	unsigned int	i;
-
-	if(s == NULL || f == NULL)
-		return;
-	i = 0;
-	while(*s)
-		(*f)(i++, s++);
+	return(ft_isalpha(c) || ft_isdigit(c));
 }

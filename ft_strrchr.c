@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 16:41:11 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 19:23:57 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/24 19:24:20 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/24 19:34:21 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *s1, const char *s2, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr;
+	char	*occ;
 
-	ptr = s1;
-	while(*ptr && (size_t)(ptr - s1 + 1) < size)
-		ptr++;
-	while(*s2 && (size_t)(ptr - s1 + 1) < size)
-		*ptr++ = *s2++;
-	return (ft_strlen(s1) + ft_strlen(s2));
+	while(*s)
+        if(*s++ == (unsigned char) c)
+             occ = ((char *)s - 1);
+    return ((unsigned char) c == '\0' ? (char*)s : occ);
 }

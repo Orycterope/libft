@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 16:41:11 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 19:23:57 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/24 20:27:41 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/24 20:33:25 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *s1, const char *s2, size_t size)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	char	*ptr;
+	size_t	parser;
 
-	ptr = s1;
-	while(*ptr && (size_t)(ptr - s1 + 1) < size)
-		ptr++;
-	while(*s2 && (size_t)(ptr - s1 + 1) < size)
-		*ptr++ = *s2++;
-	return (ft_strlen(s1) + ft_strlen(s2));
+	if(*s2 == '\0')
+		return ((char *)s1);
+	while(n)
+	{
+		parser = 0;
+		while((s1[parser] == s2[parser] || s2[parser] == '\0') && parser <= n)
+			if(s2[parser++] == '\0')
+				return ((char *)s1);
+		s1++;
+		n--;
+	}
+	return (NULL);
 }

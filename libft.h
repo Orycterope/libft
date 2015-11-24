@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:24:10 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 16:43:36 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/24 20:31:00 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strstr(const char *s1, const char *s2);
+char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	ft_putchar(char c);

@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:45:47 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/25 20:04:54 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/25 23:02:42 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ int		ft_wordnbr(char const *s, char c)
 	while(*++s)
 		if(*s == c && *(s - 1) != c)
 			words++;
-	if(words == 1)
-		words++;
-	printf("number of words : %d\n", words);
 	return (words);
 }
 
@@ -38,7 +35,6 @@ int		ft_wordlen(char const *s, char c)
 		s++;
 	while(*s != c && *s++ != '\0')
 		len++;
-	printf("length : %d chars\n", len);
 	return(len);
 }
 
@@ -46,21 +42,15 @@ char	*ft_cpyword(char const *s, char c)
 {
 	char	*wordstart;
 	char	*parser;
-
+	
 	while(*s == c)
 		s++;
 	wordstart = (char *)malloc(sizeof(char) * ft_wordlen(s, c));
 	if(wordstart == NULL)
 		return (NULL);
-	if(*s == 0)
-	{
-		*wordstart = 0;
-		return (wordstart);
-	}
 	parser = wordstart;
 	while(*s != c && *s != 0)
 	{
-		printf("copying %c\n", *s);
 		*parser++ = *s++;
 	}
 	*parser = '\0';
@@ -88,19 +78,14 @@ char	**ft_strsplit(char const *s, char c)
 	if(tab == NULL)
 		return (NULL);
 	i = 0;
-	while(*s || i == 0)
+	while(*s && ft_wordlen(s, c) > 1)
 	{
-		ft_putchar('a');
 		word = ft_cpyword(s, c);
-		printf("got %p -> '%s'\n", word, word);
-		ft_putchar('b');
 		if(word == NULL)
 			return (NULL);
 		tab[i++] = word;
-		ft_putchar('c');
 		s = ft_nextword(s, c);
 	}
-	tab[i] = NULL;
-	printf("ret %d, ret0 %d\n", tab == NULL, tab[0] != NULL);
+	tab[i] = 0;
 	return (tab);
 }

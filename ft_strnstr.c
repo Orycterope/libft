@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 20:27:41 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 20:33:25 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/26 16:50:34 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 
 	if(*s2 == '\0')
 		return ((char *)s1);
-	while(n)
+	while(n && *s1 != 0)
 	{
 		parser = 0;
 		while((s1[parser] == s2[parser] || s2[parser] == '\0') && parser <= n)

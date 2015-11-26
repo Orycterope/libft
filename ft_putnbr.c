@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:30:21 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 15:25:12 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/26 15:28:50 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putnbr(int n)
 {
-	if (n > 10)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');	
+	ft_putstr(ft_itoa(n));
 }

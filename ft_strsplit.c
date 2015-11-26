@@ -6,14 +6,11 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:45:47 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/25 23:02:42 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/26 15:23:39 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>   //
-
-void    print_memory(const void *addr, size_t size); //
 
 int		ft_wordnbr(char const *s, char c)
 {

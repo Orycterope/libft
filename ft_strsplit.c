@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:45:47 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/26 15:23:39 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/26 19:12:08 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ char	*ft_cpyword(char const *s, char c)
 	
 	while(*s == c)
 		s++;
-	wordstart = (char *)malloc(sizeof(char) * ft_wordlen(s, c));
-	if(wordstart == NULL)
+	if (!(wordstart = (char *)malloc(sizeof(char) * ft_wordlen(s, c))))
 		return (NULL);
 	parser = wordstart;
 	while(*s != c && *s != 0)
@@ -71,8 +70,7 @@ char	**ft_strsplit(char const *s, char c)
 
 	if(s == NULL)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char*) * ft_wordnbr(s, c));
-	if(tab == NULL)
+	if (!(tab = (char **)malloc(sizeof(char*) * ft_wordnbr(s, c))))
 		return (NULL);
 	i = 0;
 	while(*s && ft_wordlen(s, c) > 1)

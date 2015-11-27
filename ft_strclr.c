@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:37:41 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 21:32:47 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/27 15:57:05 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_strclr(char *s)
 {
-	if(s == NULL)
-		return;
-	while(*s != '\0')
+	if (s == NULL)
+		return ;
+	while (*s != '\0')
 		*s++ = '\0';
 }

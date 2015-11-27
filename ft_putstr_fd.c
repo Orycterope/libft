@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:16:10 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 13:18:54 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:03:58 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while(*s)
-		ft_putchar_fd(*s++, fd); 
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

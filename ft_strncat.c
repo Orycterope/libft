@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 16:19:29 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 16:39:18 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/27 15:18:01 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	char	*ptr;
 
 	ptr = ft_strchr(s1, '\0');
-	while(*s2 && n--)
+	while (*s2 && n--)
 		*ptr++ = *s2++;
 	*ptr = '\0';
 	return (s1);

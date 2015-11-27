@@ -6,7 +6,7 @@
 #    By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 14:45:52 by tvermeil          #+#    #+#              #
-#    Updated: 2015/11/26 14:52:03 by tvermeil         ###   ########.fr        #
+#    Updated: 2015/11/27 14:56:20 by tvermeil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,15 +64,16 @@ SRCS =     ft_memset.c \
     ft_putchar_fd.c \
     ft_putstr_fd.c \
     ft_putendl_fd.c \
-    ft_putnbr_fd.c 
-#    ft_lstnew.c \
+    ft_putnbr_fd.c \
+    ft_lstnew.c \
     ft_lstdelone.c \
     ft_lstdel.c \
     ft_lstadd.c \
     ft_lstiter.c \
     ft_lstmap.c \
 
-#.SILENT:
+.SILENT:
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

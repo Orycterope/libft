@@ -6,7 +6,7 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:21:20 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/24 13:31:47 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/27 15:43:47 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	if (n == 0)
-		return;
+		return ;
 	while (n--)
 		*(char *)s++ = 0;
 }

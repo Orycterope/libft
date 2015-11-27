@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 18:04:15 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/27 15:22:40 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/26 22:32:18 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/27 15:41:19 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	unsigned int	i;
+	t_list	*next;
+	t_list	*maillon;
 
-	if (s == NULL || f == NULL)
+	if (alst == NULL)
 		return ;
-	i = 0;
-	while (*s)
-		(*f)(i++, s++);
+	maillon = *alst;
+	while (maillon)
+	{
+		next = maillon->next;
+		(*del)(maillon, sizeof(t_list));
+		maillon->next = NULL;
+		maillon = next;
+	}
+	*alst = NULL;
+	alst = NULL;
 }

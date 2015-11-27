@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 18:04:15 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/27 15:22:40 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/11/26 23:21:12 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/11/27 15:14:51 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+static void	ft_lstmap_rec(t_list *lst, t_list *maplst,
+		t_list *(*f)(t_list *elem))
 {
-	unsigned int	i;
-
-	if (s == NULL || f == NULL)
+	if (lst == NULL)
 		return ;
-	i = 0;
-	while (*s)
-		(*f)(i++, s++);
+	maplst->next = (*f)(lst);
+	ft_lstmap_rec(lst->next, maplst->next, f);
+}
+
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*maplst;
+
+	maplst = (*f)(lst);
+	ft_lstmap_rec(lst->next, maplst, f);
+	return (maplst);
 }

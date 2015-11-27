@@ -6,13 +6,13 @@
 /*   By: tvermeil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:31:23 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/11/23 12:51:17 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:03:22 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr(char const *s)
+void	ft_putstr(char const *s)
 {
 	while (*s)
 		ft_putchar(*s++);
